@@ -1,0 +1,21 @@
+TODO
+- add prev/next buttons to blog and projects
+- investigate view transitions and pagefind issues
+- rewrite 01 and 02
+- 404 page
+- add note component
+- fix titles on tab bar
+- add tags
+- fix broken pictures/svgs on both project pages
+- refactor updateThemeButtons function
+- push to github
+- test giscus on switching themes automatically when theme changes
+
+DONE
+- add copy button to code blocks (make optional?)
+- rewrite README
+- change photos for markdown syntax post
+- rewrite intro blurb
+- refactor pagefind js
+- create changelog post
+- recolor light mode

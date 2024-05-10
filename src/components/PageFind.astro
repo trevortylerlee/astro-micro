@@ -1,0 +1,128 @@
+---
+
+---
+
+<div
+  id="backdrop"
+  class="bg-[rgba(0, 0, 0, 0.5] invisible fixed left-0 top-0 z-50 flex h-screen w-full justify-center p-6 backdrop-blur-sm"
+>
+  <div
+    id="pagefind-container"
+    class="m-0 flex h-fit max-h-[80%] w-full max-w-screen-sm flex-col overflow-auto rounded border border-black/15 bg-neutral-100 p-2 shadow-lg dark:border-white/20 dark:bg-neutral-900"
+  >
+    <form
+      id="form"
+      role="search"
+      aria-label="Search"
+      class="group flex justify-between bg-neutral-100 p-2 dark:bg-neutral-900"
+    >
+      <input
+        id="search"
+        type="text"
+        placeholder="Search..."
+        autocomplete="off"
+        class="w-full rounded border border-black/15 bg-neutral-100 px-3 py-1 dark:border-white/20 dark:bg-neutral-900"
+      />
+    </form>
+    <div id="results" class="grid gap-3"></div>
+    <div class="mr-2 pb-1 pt-2 text-right text-xs dark:prose-invert">
+      Press <span class="prose text-xs dark:prose-invert"
+        ><kbd class="">Esc</kbd></span
+      > or click anywhere to close
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const magnifyingGlass = document.getElementById("magnifying-glass");
+  const backdrop = document.getElementById("backdrop");
+  const results = document.getElementById("results");
+  const search = document.getElementById("search");
+
+  search?.addEventListener("input", async (e) => {
+    // only load the pagefind script once
+    if (e.target.dataset.loaded !== "true") {
+      e.target.dataset.loaded = "true";
+      window.pagefind = await import("/pagefind/pagefind.js");
+      await window.pagefind.options({
+        excerptLength: 15,
+      });
+    }
+
+    const pagefindSearch = await window.pagefind.debouncedSearch(
+      e.target.value,
+      {
+        /* options */
+      },
+      300
+    );
+
+    // clear old results
+    if (results) {
+      results.innerHTML = "";
+
+      // display number of results
+      results.innerHTML += `
+        <div class="text-sm ml-2">
+          <p>${pagefindSearch.results.length} ${`${pagefindSearch.results.length === 1 ? "result" : "results"}`}</p>
+        </div>`;
+
+      // add new results
+      for (const result of pagefindSearch.results) {
+        const data = await result.data();
+        results.innerHTML += `
+          <a href="${data.url}" class="rounded-lg border border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
+            <h3 class="font-semibold">${data.meta.title}</h3>
+            <p class="text-sm">${data.excerpt}</p>
+          </a>`;
+      }
+    }
+  });
+
+  function openPagefind() {
+    backdrop?.classList.remove("invisible");
+    backdrop?.classList.add("visible");
+    search.focus();
+  }
+
+  function closePagefind() {
+    backdrop?.classList.remove("visible");
+    backdrop?.classList.add("invisible");
+    search.value = "";
+    results.innerHTML = "";
+  }
+
+  // open pagefind
+  magnifyingGlass?.addEventListener("click", () => {
+    openPagefind();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/") {
+      e.preventDefault();
+      openPagefind();
+    } else if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      e.preventDefault();
+      openPagefind();
+    }
+  });
+
+  // close pagefind
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.keyCode === 27) {
+      closePagefind();
+    }
+  });
+
+  backdrop?.addEventListener("click", (event) => {
+    if (!event.target.closest("#pagefind-container")) {
+      closePagefind();
+    }
+  });
+
+  // prevent form submission
+  const form = document.getElementById("form");
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+</script>
