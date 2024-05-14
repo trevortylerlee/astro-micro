@@ -8,6 +8,11 @@ export const SITE: Site = {
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
+export const HOME: Metadata = {
+  TITLE: "Home",
+  DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
+};
+
 export const BLOG: Metadata = {
   TITLE: "Blog",
   DESCRIPTION: "A collection of articles on topics I am passionate about.",

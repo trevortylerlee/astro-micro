@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.7.1",
+    "astro-pagefind": "^1.5.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.3",

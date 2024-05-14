@@ -1,17 +1,27 @@
 TODO
-- add prev/next buttons to blog and projects
-- investigate view transitions and pagefind issues
-- rewrite 01 and 02
-- 404 page
-- add note component
-- fix titles on tab bar
 - add tags
 - fix broken pictures/svgs on both project pages
-- refactor updateThemeButtons function
 - push to github
+- move css to components and out of global
+- change date examples in md posts to use format 2024-05-11
+- investigate view transitions and pagefind issues
+
+BLOCKED
+- add rss feed
 - test giscus on switching themes automatically when theme changes
 
 DONE
+- add links to headings
+- toc
+- make emojis default based on type in Callout component
+- rewrite to be consistent with 00
+- refactor updateThemeButtons function
+- fix titles on tab bar
+- rewrite posts starting from 03
+- add note component
+- 404 page
+- rewrite 01 and 02
+- add prev/next buttons to blog
 - add copy button to code blocks (make optional?)
 - rewrite README
 - change photos for markdown syntax post

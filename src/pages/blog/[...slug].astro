@@ -5,6 +5,8 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
+import PostNavigation from "@components/PostNavigation.astro";
+import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -17,8 +19,33 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<"blog">;
 
+const posts = await getCollection("blog");
+
+function getNextPost() {
+  let postIndex;
+  for (const post of posts) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = posts.indexOf(post);
+      return posts[postIndex + 1];
+    }
+  }
+}
+
+function getPrevPost() {
+  let postIndex;
+  for (const post of posts) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = posts.indexOf(post);
+      return posts[postIndex - 1];
+    }
+  }
+}
+
+const nextPost = getNextPost();
+const prevPost = getPrevPost();
+
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
@@ -36,12 +63,16 @@ const { Content } = await post.render();
           {readingTime(post.body)}
         </div>
       </div>
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
+      <h1 class="animate text-3xl font-semibold text-black dark:text-white">
         {post.data.title}
-      </div>
+      </h1>
     </div>
+    <TableOfContents headings={headings} />
     <article class="animate">
       <Content />
+      <div class="mt-24">
+        <PostNavigation prevPost={prevPost} nextPost={nextPost} />
+      </div>
     </article>
   </Container>
 </Layout>

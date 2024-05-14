@@ -1,23 +1,23 @@
 ---
 title: "MDX syntax guide"
-description: "Get started writing mdx in markdown."
+description: "Use interactive components in Markdown."
 date: "03/16/2024"
 ---
 
-MDX is largely an extension of markdown with the ability to import `.astro`,
-`.jsx`, `.tsx` and other framework components you have integrated.
-
-This unlocks a lot of possibilities for creating interactive content.
-
-This guide will cover the basics of mdx syntax and how to use it, as well as a few examples.
+import Callout from "@/components/Callout.astro";
 
 ---
 
-### Example 1
+MDX is an extension of Markdown with the ability to import `.astro`,
+`.jsx`, `.tsx` and other framework components you have integrated.
+
+This guide covers the basics of MDX syntax and how to use it, as well as a few examples.
+
+## Example 1
 
 Importing a component from the `/components` directory.
 
-This component will accept a javascript date object and format it as a string.
+This component accepts a Javascript date object and format it as a string.
 
 ```astro
 import DateComp from "../../../components/FormattedDate.astro";
@@ -31,11 +31,11 @@ import FormattedDate from "../../../components/FormattedDate.astro";
 
 ---
 
-### Example 2
+## Example 2
 
 Importing a component from a relative path to your content.
 
-This component will display an alert when you click the button.
+This component displays an alert when the button is clicked.
 
 ```astro
 import RelativeComponent from "./component.astro";
@@ -49,12 +49,13 @@ import RelativeComponent from "./component.astro";
 
 ---
 
-Nano is an extremely lightweight theme, with no frameworks, so there aren't
-any examples of react, vue, solid etc. You can integrate these frameworks using
-the guide below, and also use those components in your mdx files.
+By default Micro has zero frameworks installed. If you install a framework, components of that framework can be used in MDX files.
 
-Don't forget to
-use the `client` directive to make them interactive.
+<Callout>
+  Don't forget to use [client
+  directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
+  to make framework components interactive.
+</Callout>
 
 ```astro
 <ReactComponent client:load />
@@ -62,9 +63,9 @@ use the `client` directive to make them interactive.
 
 ---
 
-### More Links
+## More Links
 
 - [MDX Syntax Documentation](https://mdxjs.com/docs/what-is-mdx)
 - [Astro Framework Integrations](https://docs.astro.build/en/guides/integrations-guide)
 - [Astro Usage Documentation](https://docs.astro.build/en/guides/markdown-content/#markdown-and-mdx-pages)
-- **Note:** [Client Directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) are still required to create interactive components. Otherwise, all components in your MDX will render as static HTML (no JavaScript) by default.
+- [Client Directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)

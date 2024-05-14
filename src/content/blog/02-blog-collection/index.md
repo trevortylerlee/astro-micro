@@ -1,12 +1,14 @@
 ---
 title: "Blog Collection"
-description: "How to add posts to your blog."
-date: "03/21/2024"
+description: "How to add posts to the blog."
+date: "2024-03-21"
 ---
 
-The `blog` collections is found in `src/content/blog`.
+---
 
-Working with the `blog` collection:
+## Working with the `blog` collection:
+
+The `blog` collection is found in `src/content/blog`.
 
 ```
 📁 /src/content/blog
@@ -16,42 +18,45 @@ Working with the `blog` collection:
       └── 📄 index.mdx
 ```
 
-In the above example, two static pages will be generated, based on the existence of a classic markdown `.md` file or a jsx compatible markdown `.mdx` file. The folder name represents the slug:
+In the above example, two blog posts will be generated with the folder name representing the slug.
 
 - `https://example.com/blog/post-1`
 - `https://example.com/blog/post-2`
 
-All content must be preceded by required metadata in the markdown file in `yaml` format, and be enclosed by triple dashes. --- ---
+---
+
+## Provide metadata
+
+Metadata is required for each post.
 
 ```astro
 ---
-title: "My cool new title";
-description: "A description of my content.";
-date: "Mar 22 2024";
+title: "Blog Collection";
+description: "How to add posts to the blog.";
+date: "2024-03-21";
 draft: false;
 ---
 ```
 
-Metadata fields
+| Field       | Req | Type    | Remarks                                          |
+| :---------- | :-- | :------ | :----------------------------------------------- |
+| title       | Yes | string  | Title of the content. Used in SEO and RSS.       |
+| description | Yes | string  | Description of the content. Used in SEO and RSS. |
+| date        | Yes | string  | Must be a valid date string (able to be parsed). |
+| draft       | No  | boolean | If draft: true, content will not be published.   |
 
-| Field       | Req  | Type    | Remarks                                          |
-| :---------- | :--- | :------ | :----------------------------------------------- |
-| title       | Yes  | string  | Title of the content. Used in SEO and RSS.       |
-| description | Yes  | string  | Description of the content. Used in SEO and RSS. |
-| date        | Yes  | string  | Must be a valid date string (able to be parsed). |
-| draft       | No\* | boolean | draft: true, content will not be published.      |
+---
 
-All that's left to do is write your content under the metadata.
+All that's left to do is write the content under the metadata.
 
 ```astro
 ---
-title: "My cool new title";
-description: "A description of my content.";
-date: "Mar 22 2024";
+title: "Blog Collection";
+description: "How to add posts to the blog.";
+date: "2024-03-21";
 draft: false;
 ---
 
-### Woot This is a paragraph.
+## Working with the blog collection
+<!-- content -->
 ```
-
-🎉 Congrats, you are now a blogger.

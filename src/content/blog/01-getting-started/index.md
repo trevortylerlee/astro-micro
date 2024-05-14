@@ -4,26 +4,22 @@ description: "Hit the ground running."
 date: "03/22/24"
 ---
 
-Astro Micro is based on [astro-nano](https://github.com/markhorn-dev/astro-nano) by [Mark Horn](https://twitter.com/markhorn_dev).
+---
 
-The basic configuration of Micro is pretty simple.
+## Customize the website's metadata
 
-Edit `src/consts.ts`
-
-Customize the base site
+To change the website's metadata, edit `src/consts.ts`.
 
 ```ts
 // src/consts.ts
 
 export const SITE: Site = {
   NAME: "Astro Micro",
-  DESCRIPTION: "Astro Micro is an accessible and lightweight blog.",
+  DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
   EMAIL: "trevortylerlee@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
-
-const string = "string";
 ```
 
 | Field        | Req | Description                                          |
@@ -31,17 +27,19 @@ const string = "string";
 | TITLE        | Yes | Displayed in header and footer. Used in SEO and RSS. |
 | DESCRIPTION  | Yes | Used in SEO and RSS.                                 |
 | EMAIL        | Yes | Displayed in contact section.                        |
-| NUM_POSTS    | Yes | Limit num of posts on home page.                     |
-| NUM_PROJECTS | Yes | Limit num of projects on home page.                  |
+| NUM_POSTS    | Yes | Limit number of posts on home page.                  |
+| NUM_PROJECTS | Yes | Limit number of projects on home page.               |
 
-Customize your page metadata
+---
+
+## Customize metadata for individual pages
 
 ```ts
 // src/consts.ts
 
-export const SITE: Metadata = {
-  TITLE: "Astro Micro",
-  DESCRIPTION: "Astro Micro is an accessible and lightweight blog.",
+export const ABOUT: Metadata = {
+  TITLE: "About",
+  DESCRIPTION: "Astro Micro is a fork of Astro Nano.",
 };
 ```
 
@@ -50,7 +48,9 @@ export const SITE: Metadata = {
 | TITLE       | Yes | Displayed in browser tab. Used in SEO and RSS. |
 | DESCRIPTION | Yes | Used in SEO and RSS.                           |
 
-Customize your social media
+---
+
+## Customize the social media links
 
 ```ts
 // src/consts.ts

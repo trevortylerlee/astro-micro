@@ -74,7 +74,7 @@ html.scrolled #back-to-top {
 
 /* shiki config */
 pre {
-  @apply border border-black/15 dark:border-white/20;
+  @apply border border-black/15 dark:border-white/20 py-5;
 }
 
 :root {
@@ -107,11 +107,11 @@ pre {
 
 /* copy code button on codeblocks */
 .copy-code {
-  @apply absolute top-0 right-0 size-9 grid place-content-center text-center rounded duration-300 ease-in-out border border-black/15 bg-neutral-100 dark:border-white/20 dark:bg-neutral-900;
+  @apply absolute top-3 right-3 size-9 grid place-content-center text-center rounded duration-300 ease-in-out border border-black/15 bg-neutral-100 dark:border-white/20 dark:bg-neutral-900;
 }
 
 .copy-code:hover {
-  @apply bg-black/5 dark:bg-white/10 transition-colors;
+  @apply bg-[#E9E9E9] dark:bg-[#232323] transition-colors;
 }
 
 .copy-code:active {

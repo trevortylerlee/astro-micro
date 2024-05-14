@@ -119,22 +119,26 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
     const darkThemeButton = document.getElementById("dark-theme-button");
     const systemThemeButton = document.getElementById("system-theme-button");
 
-    lightThemeButton?.classList.remove("bg-black/5");
-    lightThemeButton?.classList.remove("dark:bg-white/5");
-    darkThemeButton?.classList.remove("bg-black/5");
-    darkThemeButton?.classList.remove("dark:bg-white/5");
-    systemThemeButton?.classList.remove("bg-black/5");
-    systemThemeButton?.classList.remove("dark:bg-white/5");
+    function removeActiveButtonTheme(button) {
+      button?.classList.remove("bg-black/5");
+      button?.classList.remove("dark:bg-white/5");
+    }
+
+    function addActiveButtonTheme(button) {
+      button?.classList.add("bg-black/5");
+      button?.classList.add("dark:bg-white/5");
+    }
+
+    removeActiveButtonTheme(lightThemeButton);
+    removeActiveButtonTheme(darkThemeButton);
+    removeActiveButtonTheme(systemThemeButton);
 
     if (theme === "light") {
-      lightThemeButton?.classList.add("bg-black/5");
-      lightThemeButton?.classList.add("dark:bg-white/5");
+      addActiveButtonTheme(lightThemeButton);
     } else if (theme === "dark") {
-      darkThemeButton?.classList.add("bg-black/5");
-      darkThemeButton?.classList.add("dark:bg-white/5");
+      addActiveButtonTheme(darkThemeButton);
     } else {
-      systemThemeButton?.classList.add("bg-black/5");
-      systemThemeButton?.classList.add("dark:bg-white/5");
+      addActiveButtonTheme(systemThemeButton);
     }
   }
 
@@ -204,7 +208,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 
   function addCopyCodeButtons() {
     let copyButtonLabel = "📋";
-    let codeBlocks = Array.from(document.querySelectorAll("pre code"));
+    let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     async function copyCode(codeBlock, copyButton) {
       const codeText = codeBlock.innerText;

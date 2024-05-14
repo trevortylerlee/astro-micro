@@ -1,0 +1,94 @@
+---
+title: "Everything new in Astro Micro"
+description: "Features, enhancements, and changes."
+date: "05/09/24"
+---
+
+import Callout from "@/components/Callout.astro";
+
+---
+
+## Pagefind search 🔎
+
+[Pagefind](https://pagefind.app) is a search library for static websites. Micro uses [Sergey Shishkin's](https://github.com/shishkin) [astro-pagefind](https://github.com/shishkin/astro-pagefind) integration. This integration simplifies development and does not require any changes to the default build script.
+
+Press <kbd>/</kbd> or <kbd>CTRL</kbd> + <kbd>K</kbd> to open the search dialog. For Mac users, <kbd>⌘</kbd> + <kbd>K</kbd> can also be used. To dismiss the search dialog, press <kbd>Esc</kbd> or click on an area outside the component.
+
+### Build and develop
+
+<Callout type="error">
+  The site **must** be built at least once so Pagefind can index the content.
+</Callout>
+
+```bash
+# Pagefind must index the site to function
+npm run build
+```
+
+When developing you can continue to use `npm run dev` and Pagefind will use the index from the last available build.
+
+---
+
+## Giscus comments 💬
+
+Coming soon...
+
+---
+
+## Callout component 🆕
+
+<Callout>
+  Adipisicing et officia reprehenderit fugiat occaecat cupidatat exercitation
+  labore consequat ullamco nostrud non.
+</Callout>
+
+<Callout type="info">
+  Adipisicing et officia reprehenderit fugiat occaecat cupidatat exercitation
+  labore consequat ullamco nostrud non.
+</Callout>
+
+<Callout type="warning">
+  Adipisicing et officia reprehenderit fugiat occaecat cupidatat exercitation
+  labore consequat ullamco nostrud non.
+</Callout>
+
+<Callout type="error">
+  Adipisicing et officia reprehenderit fugiat occaecat cupidatat exercitation
+  labore consequat ullamco nostrud non.
+</Callout>
+
+---
+
+## UI enhancements 🎨
+
+- Elements are styled and animate on focus
+- Increased contrast in light mode
+- Active theme is indicated by theme buttons
+- Separate syntax highlight themes for light and dark mode
+- Code blocks have a copy button
+- Add pagination to the bottom of blog posts
+- Create 404 page
+- Add ToC component to posts
+
+---
+
+## Other changes
+
+- Change fonts to Geist Sans and Geist Mono
+- Switch base color from "stone" to "neutral"
+- Change formatted date to use "long" option for month
+- Minor spacing changes throughout
+- Remove "work" collection and components
+  - If desired, you can get the code from [Astro Nano](https://github.com/markhorn-dev/astro-nano)
+- Slightly increased link decoration offset
+- Slightly sped-up animations
+- Reversed animation
+- Ensure posts use an h1 tag for post titles
+- Tweaked typography
+
+---
+
+## Issues ⚠️
+
+- Pagefind requires a refresh to function when ViewTransitions is enabled
+- ToC links are obscured by Header when scrolled to

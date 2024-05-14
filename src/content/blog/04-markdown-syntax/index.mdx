@@ -1,14 +1,21 @@
 ---
 title: "Markdown syntax guide"
-description: "Get started writing content in markdown."
+description: "Get started writing content in Markdown."
 date: "03/17/2024"
 ---
 
+import Callout from "@/components/Callout.astro";
+
 ---
 
-### Headings
+## Headings
 
 To create headings, use hash symbols (#) followed by a space. The number of hash symbols indicates the heading level.
+
+<Callout>
+  Use `h2` tags instead of `h1` tags in the post. Too many `h1` tags on a single
+  page can impact SEO. The post title serves as the `h1`.
+</Callout>
 
 ```md
 # Heading 1
@@ -33,11 +40,11 @@ To create headings, use hash symbols (#) followed by a space. The number of hash
 
 ---
 
-### Paragraphs
+## Paragraphs
 
 To create paragraphs, use a blank line to separate one or more lines of text.
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 ```md
 <!-- empty line -->
 I love Star Wars.
@@ -52,11 +59,11 @@ My favourite is Episode III – Revenge of the Sith.
 
 ---
 
-### Italic
+## Italic
 
 Use one asterisk \(\*\) or underscore \(\_\) to italicize text.
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 ```md
 I *love* Star Wars.
 My _favourite_ is Episode III – Revenge of the Sith.
@@ -67,11 +74,11 @@ My _favourite_ is Episode III – Revenge of the Sith.
 
 ---
 
-### Bold
+## Bold
 
 Use two asterisks \(\*\) or underscores \(\_\) to bold text.
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 ```md
 I **love** Star Wars.
 My __favourite__ is Episode III – Revenge of the Sith.
@@ -82,11 +89,11 @@ My **favourite** is Episode III – Revenge of the Sith.
 
 ---
 
-### Bold and Italic
+## Italic and Bold
 
 Use three asterisks \(\*\) or underscores \(\_\) to both bold and italicize text.
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 ```md
 I ***love*** Star Wars.
 My ___favourite___ is Episode III – Revenge of the Sith.
@@ -97,11 +104,11 @@ My **_favourite_** is Episode III – Revenge of the Sith.
 
 ---
 
-### Horizontal Rule
+## Horizontal Rule
 
 Use three hyphens \(\-\), asterisks \(\*\), or underscores \(\_\) to create a horizontal rule.
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 ```md
 <!-- empty line -->
 ---
@@ -118,7 +125,7 @@ ___
 
 ---
 
-### Links
+## Links
 
 To create a link, the link text in brackets \(\[\]\) and then follow it immediately with the URL in parentheses \(\(\)\).
 
@@ -130,20 +137,7 @@ Micro is a fork of [astro-nano](https://github.com/markhorn-dev/astro-nano).
 
 ---
 
-### URLs and Email Addresses
-
-To turn a URL or email address into a link, wrap it in angled brackets \(\<\>\).
-
-<!-- prettier-ignore -->
-```md
-URL: <https://www.trevortylerlee.com> | Email: <trevortylerlee@gmail.com>
-```
-
-URL: <https://www.trevortylerlee.com> | Email: <trevortylerlee@gmail.com>
-
----
-
-### Ordered Lists
+## Ordered Lists
 
 To create an ordered list, add line items with numbers followed by periods. Use an indent to create a nested list.
 
@@ -163,7 +157,7 @@ To create an ordered list, add line items with numbers followed by periods. Use 
 
 ---
 
-### Unordered List
+## Unordered List
 
 To create an unordered list, add a hyphen \(\-\), an asterisk \(\*\), or a plus sign \(\+\) in front of line items. Don't mix. Use an indent to create a nested list.
 
@@ -183,7 +177,7 @@ To create an unordered list, add a hyphen \(\-\), an asterisk \(\*\), or a plus 
 
 ---
 
-### Images
+## Images
 
 To add an image, add an exclamation mark (!), followed by alt text in brackets ([]), and the path or URL to the image asset in parentheses.
 
@@ -193,7 +187,7 @@ To add an image, add an exclamation mark (!), followed by alt text in brackets (
 
 Artwork courtesy of [Louie Mantia](https://lmnt.me).
 
-#### Relative
+### Relative
 
 Use the `![altText](./image.*)` pattern relative to the same folder as the markdown file. Notice the period.
 
@@ -205,7 +199,7 @@ Use the `![altText](./image.*)` pattern relative to the same folder as the markd
 
 ![TPM](./episode-i.jpg)
 
-#### Public Image
+### Public Image
 
 Use the `![altText](/image.*)` pattern relative to the public folder. No period.
 
@@ -217,7 +211,7 @@ Use the `![altText](/image.*)` pattern relative to the public folder. No period.
 
 ![AOTC](/episode-ii.jpg)
 
-#### External Image
+### External Image
 
 Use the `![altText](url)` pattern.
 
@@ -231,7 +225,7 @@ Use the `![altText](url)` pattern.
 
 ---
 
-### Blockquotes
+## Blockquotes
 
 To add a blockquote add the greater-than character \(\>\) before a paragraph. For multi-line blockquotes, add additional greater-than character for each line and include an empty spacer line.
 
@@ -247,7 +241,7 @@ To add a blockquote add the greater-than character \(\>\) before a paragraph. Fo
 
 ---
 
-### Strikethrough
+## Strikethrough
 
 Use a tilde \(\~\) symbol to strikethrough text.
 
@@ -259,7 +253,7 @@ Use a tilde \(\~\) symbol to strikethrough text.
 
 ---
 
-### Subscript
+## Subscript
 
 Use the `<sub>` tag to denote subscript.
 
@@ -271,7 +265,7 @@ H<sub>2</sub>O
 
 ---
 
-### Superscript
+## Superscript
 
 Use the `<sup>` tag to denote superscript.
 
@@ -283,7 +277,7 @@ E=mc<sup>2</sup>
 
 ---
 
-### Keyboard
+## Keyboard
 
 Use the `<kbd>` tag to denote keys on the keyboard.
 
@@ -295,7 +289,7 @@ Use the `<kbd>` tag to denote keys on the keyboard.
 
 ---
 
-### Abbreviate
+## Abbreviate
 
 Use the `<abbr>` tag to denote abbreviation.
 
@@ -319,7 +313,7 @@ Do or do not. <mark>There is no try.</mark>
 
 ---
 
-### Task Lists
+## Task Lists
 
 Combine a list with square brackets ([]) representing a checkbox. Typing `x` inside the brackets marks the task as complete.
 
@@ -335,7 +329,7 @@ Combine a list with square brackets ([]) representing a checkbox. Typing `x` ins
 
 ---
 
-### Tables
+## Tables
 
 Use three or more hyphens (-) for the column headers and use pipes (|) to separate each column. You can align text in the columns to the left, right, or center by adding a colon (:) to the left, right, or on both side of the hyphens.
 
@@ -355,7 +349,7 @@ Use three or more hyphens (-) for the column headers and use pipes (|) to separa
 
 ---
 
-### Footnotes
+## Footnotes
 
 Add a caret (^) and an identifier inside brackets \(\[\^1\]\). Identifiers can be numbers or words but can't contain spaces or tabs.
 
@@ -373,7 +367,7 @@ See the bottom of this page to view the footnotes.
 
 ---
 
-### Code
+## Code
 
 To denote a word or phrase as code, enclose it in backticks (`).
 
@@ -385,7 +379,7 @@ To denote a word or phrase as code, enclose it in backticks (`).
 
 ---
 
-### Code Blocks
+## Code Blocks
 
 Denote a code block by wrapping a section of valid code in triple backticks (`). To enable syntax highlighting, type the shorthand symbol for the language after the first three backticks. [Reference for shorthand symbols](https://shiki.style/languages).
 
@@ -405,7 +399,7 @@ function hello() {
 
 ---
 
-### Conclusion
+## Conclusion
 
 Refer to [markdownguide.org](https://www.markdownguide.org/) for best practices as well as extended syntax.
 
