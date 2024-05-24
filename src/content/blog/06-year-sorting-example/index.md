@@ -1,7 +1,7 @@
 ---
 title: "Year sorting example"
 description: "Nano groups posts by year."
-date: "12/31/2023"
+date: "2023-12-31"
 ---
 
 This post is to demonstrate the year sorting capabilities.

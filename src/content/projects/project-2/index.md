@@ -1,7 +1,7 @@
 ---
 title: "Astro Nano"
 description: "Minimal portfolio and blog build with astro and no frameworks."
-date: "03/26/2024"
+date: "2024-03-26"
 demoURL: "https://astro-nano-demo.vercel.app"
 repoURL: "https://github.com/markhorn-dev/astro-nano"
 ---
@@ -43,7 +43,7 @@ It was designed as an even more minimal theme than my popular theme [Astro Spher
 
 ## 💯 Lighthouse score
 
-![Astro Nano Lighthouse Score](/lighthouse.png)
+![Astro Nano Lighthouse Score](/lighthouse-nano.jpg)
 
 ## 🕊️ Lightweight
 

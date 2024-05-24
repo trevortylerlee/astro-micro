@@ -42,7 +42,7 @@ It is primarily Astro, Tailwind and Typescript, with a very small amount of Soli
 
 ## 💯 Lighthouse score
 
-![Astro Sphere Lighthouse Score](/lighthouse.png)
+![Astro Sphere Lighthouse Score](/lighthouse-nano.jpg)
 
 ## 🕊️ Lightweight
 

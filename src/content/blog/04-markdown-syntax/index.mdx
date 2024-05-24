@@ -1,7 +1,7 @@
 ---
 title: "Markdown syntax guide"
 description: "Get started writing content in Markdown."
-date: "03/17/2024"
+date: "2024-03-17"
 ---
 
 import Callout from "@/components/Callout.astro";
@@ -185,43 +185,35 @@ To add an image, add an exclamation mark (!), followed by alt text in brackets (
 ![altText](pathToImage)
 ```
 
-Artwork courtesy of [Louie Mantia](https://lmnt.me).
-
 ### Relative
 
 Use the `![altText](./image.*)` pattern relative to the same folder as the markdown file. Notice the period.
 
 ```md
-<!-- Album artwork from Louie Mantia at lmnt.me -->
-
-![TPM](./episode-i.jpg)
+![X-Wing Starfighter](./x-wing.jpeg)
 ```
 
-![TPM](./episode-i.jpg)
+![X-Wing Starfighter](./x-wing.jpeg)
 
 ### Public Image
 
 Use the `![altText](/image.*)` pattern relative to the public folder. No period.
 
 ```md
-<!-- Album artwork from Louie Mantia at lmnt.me -->
-
-![AOTC](/episode-ii.jpg)
+![Y-Wing Starfighter](/y-wing.jpeg)
 ```
 
-![AOTC](/episode-ii.jpg)
+![Y-Wing Starfighter](/y-wing.jpeg)
 
 ### External Image
 
 Use the `![altText](url)` pattern.
 
 ```md
-<!-- Album artwork from Louie Mantia at lmnt.me -->
-
-![ROTS](https://raw.githubusercontent.com/trevortylerlee/ROTS-remote-image/main/episode-iii.jpg)
+![Naboo N-1 Starfighter](https://raw.githubusercontent.com/trevortylerlee/n1/main/n1.jpeg)
 ```
 
-![ROTS](https://raw.githubusercontent.com/trevortylerlee/ROTS-remote-image/main/episode-iii.jpg)
+![Naboo N-1 Starfighter](https://raw.githubusercontent.com/trevortylerlee/n1/main/n1.jpeg)
 
 ---
 

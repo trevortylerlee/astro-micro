@@ -1,7 +1,7 @@
 ---
 title: "Projects Collection"
 description: "How to add projects to your portfolio."
-date: "03/20/2024"
+date: "2024-03-20"
 ---
 
 ---
@@ -53,7 +53,7 @@ All that's left to do is write the content under the metadata.
 ---
 title: "Astro Micro";
 description: "Astro Micro is an accessible theme for Astro";
-date: "03/22/2024";
+date: "2024-03-20";
 draft: false;
 ---
 
