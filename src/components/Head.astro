@@ -63,7 +63,10 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 
 <!-- PageFind -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<script is:inline src="/pagefind/pagefind-ui.js">
+  import { Image, Picture } from "astro:assets";
+  import { Code, Debug } from "astro:components";
+</script>
 
 <!-- <ViewTransitions /> -->
 
@@ -74,6 +77,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
     animate();
     updateThemeButtons();
     addCopyCodeButtons();
+    setGiscusTheme();
 
     const backToTop = document.getElementById("back-to-top");
     backToTop?.addEventListener("click", (event) => scrollToTop(event));
@@ -180,8 +184,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
              -ms-transition: none !important;
              transition: none !important;
           }
-        `
-      )
+        `,
+      ),
     );
 
     document.head.appendChild(css);
@@ -194,6 +198,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 
     window.getComputedStyle(css).opacity;
     document.head.removeChild(css);
+
+    setGiscusTheme();
   }
 
   function preloadTheme() {
@@ -242,6 +248,18 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
       });
     }
   }
+
+  const setGiscusTheme = () => {
+    const giscus = document.querySelector(".giscus-frame");
+
+    const isDark = document.documentElement.classList.contains("dark");
+
+    if (giscus) {
+      const url = new URL(giscus.src);
+      url.searchParams.set("theme", isDark ? "dark" : "light");
+      giscus.src = url.toString();
+    }
+  };
 
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());

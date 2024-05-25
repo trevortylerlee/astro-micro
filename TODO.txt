@@ -1,11 +1,11 @@
 TODO
-- push to github
 - add rss feed
-- test giscus on switching themes automatically when theme changes
 - screenshot lighthouse score (possibly all 3 again)
 - create project-3.md
 
 DONE
+- giscus
+- push to github
 - change date examples in md posts to use format 2024-05-11
 - add links to headings
 - toc
