@@ -4,6 +4,7 @@ export const SITE: Site = {
   TITLE: "Astro Micro",
   DESCRIPTION: "Astro Micro is an accessible and lightweight blog.",
   EMAIL: "trevortylerlee@gmail.com",
+  URL: "https://astro-micro.vercel.app",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };

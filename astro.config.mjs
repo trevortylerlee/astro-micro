@@ -1,4 +1,5 @@
 import tailwind from "@astrojs/tailwind";
+import { SITE } from "@consts";
 import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
@@ -7,7 +8,7 @@ import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-micro.vercel.app",
+  site: SITE.URL,
   integrations: [tailwind(), sitemap(), mdx(), pagefind()],
   markdown: {
     shikiConfig: {

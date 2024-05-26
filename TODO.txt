@@ -1,9 +1,9 @@
 TODO
-- add rss feed
 - screenshot lighthouse score (possibly all 3 again)
 - create project-3.md
 
 DONE
+- add rss feed
 - giscus
 - push to github
 - change date examples in md posts to use format 2024-05-11
