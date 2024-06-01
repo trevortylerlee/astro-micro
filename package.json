@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.9.2",
+    "astro-font": "^0.0.81",
     "astro-pagefind": "^1.5.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.3.0",

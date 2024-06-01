@@ -1,4 +1,3 @@
-import defaultTheme from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
@@ -6,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Geist", ...defaultTheme.fontFamily.sans],
-        mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
+        sans: ["var(--font-geist)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },

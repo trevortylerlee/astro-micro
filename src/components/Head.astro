@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { join } from "node:path";
+import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -24,19 +26,37 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link
-  rel="preload"
-  href="/fonts/geist.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/fonts/geist-mono.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
+<AstroFont
+  config={[
+    {
+      name: "Geist",
+      src: [
+        {
+          style: "normal",
+          weight: "400",
+          path: join(process.cwd(), "public", "fonts", "geist.woff2"),
+        },
+      ],
+      preload: true,
+      display: "swap",
+      fallback: "sans-serif",
+      cssVariable: "font-geist",
+    },
+    {
+      name: "Geist_Mono",
+      src: [
+        {
+          style: "normal",
+          weight: "400",
+          path: join(process.cwd(), "public", "fonts", "geist-mono.woff2"),
+        },
+      ],
+      preload: true,
+      display: "swap",
+      fallback: "sans-serif",
+      cssVariable: "font-geist-mono",
+    },
+  ]}
 />
 
 <!-- Canonical URL -->
@@ -184,8 +204,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
              -ms-transition: none !important;
              transition: none !important;
           }
-        `,
-      ),
+        `
+      )
     );
 
     document.head.appendChild(css);
