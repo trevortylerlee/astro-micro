@@ -6,7 +6,7 @@ date: "2024-03-22"
 
 ---
 
-## Install astro-micro
+## Install astro-microo
 
 Clone the [Astro Micro repository](https://github.com/trevortylerlee/astro-micro.git).
 
@@ -179,5 +179,5 @@ const setGiscusTheme = () => {
 };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Mjc1MTc0NDVdfQ==
+eyJoaXN0b3J5IjpbLTE3Nzg5MzU4NzRdfQ==
 -->
