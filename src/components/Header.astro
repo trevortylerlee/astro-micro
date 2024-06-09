@@ -4,7 +4,7 @@ import Link from "@components/Link.astro";
 import { SITE } from "@consts";
 ---
 
-<header>
+<header transition:persist>
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
       <Link href="/" underline={false}>
