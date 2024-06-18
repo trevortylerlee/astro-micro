@@ -8,6 +8,7 @@ import BackToPrevious from "@components/BackToPrevious.astro";
 import PostNavigation from "@components/PostNavigation.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
+import "katex/dist/katex.min.css";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -21,29 +22,6 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 
 const posts = await getCollection("blog");
-
-function getNextPost() {
-  let postIndex;
-  for (const post of posts) {
-    if (post.slug === Astro.params.slug) {
-      postIndex = posts.indexOf(post);
-      return posts[postIndex + 1];
-    }
-  }
-}
-
-function getPrevPost() {
-  let postIndex;
-  for (const post of posts) {
-    if (post.slug === Astro.params.slug) {
-      postIndex = posts.indexOf(post);
-      return posts[postIndex - 1];
-    }
-  }
-}
-
-const nextPost = getNextPost();
-const prevPost = getPrevPost();
 
 const post = Astro.props;
 const { Content, headings } = await post.render();
@@ -71,12 +49,28 @@ const { Content, headings } = await post.render();
     <TableOfContents headings={headings} />
     <article class="animate">
       <Content />
-      <div class="mt-24">
-        <PostNavigation prevPost={prevPost} nextPost={nextPost} />
-      </div>
+      <div class="mt-24"></div>
       <div class="mt-24">
         <Giscus />
       </div>
     </article>
   </Container>
 </Layout>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+></script>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
