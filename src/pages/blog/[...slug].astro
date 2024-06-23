@@ -20,7 +20,9 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<"blog">;
 
-const posts = await getCollection("blog");
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 function getNextPost() {
   let postIndex;
