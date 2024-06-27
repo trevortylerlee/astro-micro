@@ -70,7 +70,7 @@ const { Content, headings } = await post.render();
         {post.data.title}
       </h1>
     </div>
-    <TableOfContents headings={headings} />
+    {headings.length > 0 && <TableOfContents headings={headings} />}
     <article class="animate">
       <Content />
       <div class="mt-24">
