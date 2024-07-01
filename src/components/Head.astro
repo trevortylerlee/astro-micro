@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
 
+import "@fontsource/geist-sans";
+import "@fontsource/geist-mono";
+
 interface Props {
   title: string;
   description: string;
@@ -22,22 +25,6 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
   href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>"
 />
 <meta name="generator" content={Astro.generator} />
-
-<!-- Font preloads -->
-<link
-  rel="preload"
-  href="/fonts/geist.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/fonts/geist-mono.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -181,8 +168,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
              -ms-transition: none !important;
              transition: none !important;
           }
-        `,
-      ),
+        `
+      )
     );
 
     document.head.appendChild(css);
