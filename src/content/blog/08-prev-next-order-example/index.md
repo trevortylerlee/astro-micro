@@ -1,7 +1,7 @@
 ---
-title: "This post is to demonstrate proper Prev/Next navigation."
-description: "."
-date: "2024-03-18"
+title: "Chronological pagination example"
+description: "Pagination works regardless of folder name."
+date: "2024-03-21"
 draft: false
 ---
 
