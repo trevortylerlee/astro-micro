@@ -2,31 +2,33 @@
 import Search from "astro-pagefind/components/Search";
 ---
 
-<div
-  transition:persist
-  id="backdrop"
-  class="bg-[rgba(0, 0, 0, 0.5] invisible fixed left-0 top-0 z-50 flex h-screen w-full justify-center p-6 backdrop-blur-sm"
->
+<aside data-pagefind-ignore>
   <div
-    id="pagefind-container"
-    class="m-0 flex h-fit max-h-[80%] w-full max-w-screen-sm flex-col overflow-auto rounded border border-black/15 bg-neutral-100 p-2 px-4 py-3 shadow-lg dark:border-white/20 dark:bg-neutral-900"
+    transition:persist
+    id="backdrop"
+    class="bg-[rgba(0, 0, 0, 0.5] invisible fixed left-0 top-0 z-50 flex h-screen w-full justify-center p-6 backdrop-blur-sm"
   >
-    <Search
-      id="search"
-      className="pagefind-ui"
-      uiOptions={{
-        showImages: false,
-        excerptLength: 15,
-        resetStyles: false,
-      }}
-    />
-    <div class="mr-2 pb-1 pt-4 text-right text-xs dark:prose-invert">
-      Press <span class="prose text-xs dark:prose-invert"
-        ><kbd class="">Esc</kbd></span
-      > or click anywhere to close
+    <div
+      id="pagefind-container"
+      class="m-0 flex h-fit max-h-[80%] w-full max-w-screen-sm flex-col overflow-auto rounded border border-black/15 bg-neutral-100 p-2 px-4 py-3 shadow-lg dark:border-white/20 dark:bg-neutral-900"
+    >
+      <Search
+        id="search"
+        className="pagefind-ui"
+        uiOptions={{
+          showImages: false,
+          excerptLength: 15,
+          resetStyles: false,
+        }}
+      />
+      <div class="mr-2 pb-1 pt-4 text-right text-xs dark:prose-invert">
+        Press <span class="prose text-xs dark:prose-invert"
+          ><kbd class="">Esc</kbd></span
+        > or click anywhere to close
+      </div>
     </div>
   </div>
-</div>
+</aside>
 
 <script is:inline>
   const magnifyingGlass = document.getElementById("magnifying-glass");
