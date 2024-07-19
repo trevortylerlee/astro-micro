@@ -73,6 +73,13 @@ import Search from "astro-pagefind/components/Search";
     }
   });
 
+  // close pagefind when searched result(link) clicked
+  document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("pagefind-ui__result-link")) {
+      closePagefind();
+    }
+  });
+
   backdrop?.addEventListener("click", (event) => {
     if (!event.target.closest("#pagefind-container")) {
       closePagefind();
