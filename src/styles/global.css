@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles.css */
+.narrow-spacer {
+  margin-top: 15px; /* Adjust this value as needed */
+}
+
 html {
   overflow-y: auto;
   color-scheme: light;

@@ -19,56 +19,38 @@ const projects: CollectionEntry<"projects">[] = (
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 ---
-
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+
   <Container>
     <h1 class="animate font-semibold text-black dark:text-white">
-      Introducing Astro Micro 🔬
+    👋 Greetings, I'm Kin
     </h1>
+
+    <section>
+      <img src="/kin.gif" alt="Kin" style="width: 24%; height: 24%; margin-top: 8px; margin-bottom: -12px;" />
+    </section>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <span class="animate">
             <p>
-              Astro Micro is an accessible theme for <Link
-                href="https://astro.build/">Astro</Link
-              >. It's a fork of
-              <Link href="https://github.com/markhorn-dev"> Mark Horn's </Link> popular
-              theme <Link href="https://astro.build/themes/details/astronano/"
-                >Astro Nano</Link
-              >. Like Nano, Micro comes with zero frameworks installed.
-            </p>
-            <p>
-              Micro adds features like <Link href="https://pagefind.app/"
-                >Pagefind</Link
-              > for search, <Link href="https://giscus.app">Giscus</Link> for comments,
-              and more. For a full list of changes, see this <Link
-                href="/blog/00-micro-changelog">blog post</Link
-              >.
-            </p>
-          </span>
-          <span class="animate">
-            <p>
-              Micro still comes with everything great about Nano — full type
-              safety, a sitemap, an RSS feed, and Markdown + MDX support. Styled
-              with TailwindCSS and preconfigured with system, light, and dark
-              themes.
-            </p>
-            <p>
-              Visit
-              <Link href="https://github.com/trevortylerlee/astro-micro">
-                Astro Micro on GitHub
-              </Link>
-              to fork the repository to get started.
-            </p>
+              Lovely day to be alive and on fire for something. 
+            </br></br>   
+              I'm a poet, pixel artist and entrepreneur by the given name of Garett Laugavitz. My background is in B2B marketing, but I bleed at the vanguard of web3, a bonafide revolution, celebrating culture in this newfound channel.
+            </br></br>              
+              If “the medium is the message” then blockchain communicates value. It’s digital marble.. a ledger to enshrine the past and store value in the present, allowing us to wager on a better future. Sure, snake oil abounds and some say, in a gold rush, the only ones who make any money are the ones selling the picks and shovels. 
+            </br></br>              
+              But there’s more to be had than digital gold. We can program our values into our money, bringing our worldview into this abstraction of our time, labors and gifts. Though there’s more to life than all that and I’ve lost myself down the 🐇h🕳️le before. Hence, you’ll find my writing to reflect an array of missives and musings.
+            
+        </p>
           </span>
         </article>
       </section>
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
-          <h2 class="font-semibold text-black dark:text-white">Latest posts</h2>
-          <Link href="/blog"> See all posts </Link>
+          <h2 class="font-semibold text-black dark:text-white">Latest Missives</h2>
+          <Link href="/blog"> See All </Link>
         </div>
         <ul class="not-prose flex flex-col gap-4">
           {
@@ -84,9 +66,9 @@ const projects: CollectionEntry<"projects">[] = (
       <section class="animate space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
           <h2 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Projects of Note
           </h2>
-          <Link href="/projects"> See all projects </Link>
+          <Link href="/projects"> See All</Link>
         </div>
         <ul class="not-prose flex flex-col gap-4">
           {
@@ -100,11 +82,10 @@ const projects: CollectionEntry<"projects">[] = (
       </section>
 
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">Let's Connect</h2>
+        <h2 class="font-semibold text-black dark:text-white">Holler</h2>
         <article>
           <p>
-            If you want to get in touch with me about something or just to say
-            hi, reach out on social media or send me an email.
+            You don't call.. you don't write 😉 Let's change that. DM me on Twitter or drop me an email. Would be rad to jam.
           </p>
         </article>
         <ul class="not-prose flex flex-wrap gap-2">
