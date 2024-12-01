@@ -2,6 +2,8 @@
 title: "Getting started"
 description: "Hit the ground running."
 date: "2024-03-22"
+tags:
+  - tutorial
 ---
 
 ---
@@ -135,7 +137,7 @@ export default defineConfig({
 
 ## Set up Giscus
 
-Follow the steps at [giscus.app](https://giscus.app). Once you get your  custom Giscus script from that site, go to `Giscus.astro` and replace that script with your own.
+Follow the steps at [giscus.app](https://giscus.app). Once you get your custom Giscus script from that site, go to `Giscus.astro` and replace that script with your own.
 
 ```js
 // src/components/Giscus.astro
@@ -156,8 +158,8 @@ Follow the steps at [giscus.app](https://giscus.app). Once you get your  custom 
   data-lang="en"
   data-loading="lazy"
   crossorigin="anonymous"
-  async></script>
-
+  async
+></script>
 ```
 
 To change the Giscus themes used, edit the `setGiscusTheme` function in `Head.astro`.

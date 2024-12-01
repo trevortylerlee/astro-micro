@@ -69,6 +69,20 @@ const { Content, headings } = await post.render();
       <h1 class="animate text-3xl font-semibold text-black dark:text-white">
         {post.data.title}
       </h1>
+      {
+        post.data.tags && post.data.tags?.length > 0 ? (
+          <div class="animate flex gap-2 pt-1">
+            {post.data.tags.map((tag) => (
+              <a
+                href={`/tags/${tag}`}
+                class="rounded border border-black/15 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
+        ) : null
+      }
     </div>
     {headings.length > 0 && <TableOfContents headings={headings} />}
     <article class="animate">

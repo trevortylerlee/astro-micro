@@ -2,6 +2,8 @@
 title: "Blog Collection"
 description: "How to add posts to the blog."
 date: "2024-03-21"
+tags:
+  - tutorial
 ---
 
 ---
@@ -35,6 +37,8 @@ title: "Blog Collection";
 description: "How to add posts to the blog.";
 date: "2024-03-21";
 draft: false;
+tags:
+  - tutorial
 ---
 ```
 
@@ -44,6 +48,7 @@ draft: false;
 | description | Yes | string  | Description of the content. Used in SEO and RSS. |
 | date        | Yes | string  | Must be a valid date string (able to be parsed). |
 | draft       | No  | boolean | If draft: true, content will not be published.   |
+| tags        | No  | string array | Tags to organize content |
 
 ---
 
@@ -55,6 +60,8 @@ title: "Blog Collection";
 description: "How to add posts to the blog.";
 date: "2024-03-21";
 draft: false;
+tags:
+  - tutorial
 ---
 
 ## Working with the blog collection
