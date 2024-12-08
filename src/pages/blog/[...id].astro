@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -48,7 +48,7 @@ const nextPost = getNextPost();
 const prevPost = getPrevPost();
 
 const post = Astro.props;
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 ---
 
 <Layout title={post.data.title} description={post.data.description}>

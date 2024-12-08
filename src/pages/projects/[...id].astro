@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
-const { Content, headings } = await project.render();
+const { Content, headings } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
