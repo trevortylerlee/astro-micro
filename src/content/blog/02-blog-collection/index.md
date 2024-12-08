@@ -20,7 +20,7 @@ The `blog` collection is found in `src/content/blog`.
       └── 📄 index.mdx
 ```
 
-In the above example, two blog posts will be generated with the folder name representing the slug.
+In the above example, two blog posts will be generated with the folder name representing the id.
 
 - `https://example.com/blog/post-1`
 - `https://example.com/blog/post-2`

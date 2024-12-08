@@ -20,7 +20,7 @@ The `projects` collections is found in `src/content/projects`.
       └── 📄 index.mdx
 ```
 
-In the above example, two project posts will be generated with the folder name representing the slug.
+In the above example, two project posts will be generated with the folder name representing the id.
 
 - `https://example.com/projects/project-1`
 - `https://example.com/projects/project-2`
