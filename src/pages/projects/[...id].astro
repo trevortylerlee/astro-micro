@@ -34,9 +34,11 @@ const { Content, headings } = await render(project);
           <FormattedDate date={project.data.date} />
         </div>
         &bull;
-        <div class="font-base text-sm">
-          {readingTime(project.body)}
-        </div>
+        {project.body && (
+          <div class="font-base text-sm">
+            {readingTime(project.body)}
+          </div>
+        )}     
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {project.data.title}

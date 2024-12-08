@@ -62,9 +62,11 @@ const { Content, headings } = await render(post);
           <FormattedDate date={post.data.date} />
         </div>
         &bull;
-        <div class="font-base text-sm">
-          {readingTime(post.body)}
-        </div>
+        {post.body && (
+          <div class="font-base text-sm">
+            {readingTime(post.body)}
+          </div>
+        )}        
       </div>
       <h1 class="animate text-3xl font-semibold text-black dark:text-white">
         {post.data.title}
