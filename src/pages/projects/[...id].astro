@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { id: project.id },
     props: project,
   }));
 }

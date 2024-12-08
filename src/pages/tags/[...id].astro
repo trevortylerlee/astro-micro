@@ -13,14 +13,14 @@ export async function getStaticPaths() {
 
   // Create paths for each tag
   return tags.map((tag) => ({
-    params: { slug: tag },
+    params: { id: tag },
     props: {
       posts: posts.filter((post) => post.data.tags?.includes(tag)),
     },
   }));
 }
 
-const { slug } = Astro.params;
+const { id } = Astro.params;
 const { posts } = Astro.props;
 
 // Sort posts by date, most recent first
@@ -29,12 +29,12 @@ const sortedPosts = posts.sort(
 );
 ---
 
-<Layout title={`Tag: ${slug}`} description={`Posts with the tag: ${slug}`}>
+<Layout title={`Tag: ${id}`} description={`Posts with the tag: ${id}`}>
   <Container>
     <div class="space-y-10" data-pagefind-ignore>
       <BackToPrevious href="/tags"> All tags </BackToPrevious>
       <h1 class="animate font-semibold text-black dark:text-white">
-        Posts tagged with "{slug}"
+        Posts tagged with "{id}"
       </h1>
       <ul class="animate flex flex-col gap-4">
         {sortedPosts.map((post) => <ArrowCard entry={post} />)}
