@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -13,14 +13,14 @@ export async function getStaticPaths() {
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { id: project.id },
     props: project,
   }));
 }
 type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
-const { Content, headings } = await project.render();
+const { Content, headings } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
@@ -34,9 +34,11 @@ const { Content, headings } = await project.render();
           <FormattedDate date={project.data.date} />
         </div>
         &bull;
-        <div class="font-base text-sm">
-          {readingTime(project.body)}
-        </div>
+        {project.body && (
+          <div class="font-base text-sm">
+            {readingTime(project.body)}
+          </div>
+        )}     
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {project.data.title}
