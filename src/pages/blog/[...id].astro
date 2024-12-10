@@ -51,7 +51,7 @@ const post = Astro.props;
 const { Content, headings } = await render(post);
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout title={post.data.title} description={post.data.description} lang="en">
   <Container>
     <div class="animate">
       <BackToPrevious href="/blog">Back to blog</BackToPrevious>
@@ -66,7 +66,7 @@ const { Content, headings } = await render(post);
           <div class="font-base text-sm">
             {readingTime(post.body)}
           </div>
-        )}        
+        )}    
       </div>
       <h1 class="animate text-3xl font-semibold text-black dark:text-white">
         {post.data.title}

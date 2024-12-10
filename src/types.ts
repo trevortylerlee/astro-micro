@@ -15,3 +15,13 @@ export type Socials = {
   NAME: string;
   HREF: string;
 }[];
+
+export type WorkExperience = {
+  company: string;
+  role: string;
+  technologies: string[];
+  start: Date;
+  end: Date | null;
+  description: string;
+  link: string;
+}[];

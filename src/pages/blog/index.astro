@@ -22,12 +22,17 @@ const posts = data.reduce((acc: Acc, post) => {
   return acc;
 }, {});
 
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
+const years = Object.keys(posts).sort(
+  (a, b) => Number.parseInt(b) - Number.parseInt(a),
+);
 ---
 
-<Layout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+<Layout title={BLOG.TITLE} description={BLOG.DESCRIPTION} lang="es">
   <Container>
     <aside data-pagefind-ignore>
+      <h1 class="animate text-3xl font-semibold text-black dark:text-white">
+        Blog
+      </h1>
       <div class="space-y-10">
         <div class="space-y-4">
           {

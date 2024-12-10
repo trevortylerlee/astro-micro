@@ -5,9 +5,9 @@ import BackToPrevious from "@components/BackToPrevious.astro";
 import { SITE } from "@consts";
 ---
 
-<Layout title="404" description={SITE.DESCRIPTION}>
+<Layout title="404" description={SITE.DESCRIPTION} lang="en">
   <Container>
-    <div class="mt-16 grid place-items-center gap-3">
+    <div class="mt-16 grid place-items-center gap-3" data-pagefind-ignore>
       <h4 class="animate text-2xl font-semibold text-black dark:text-white">
         404: Page not found
       </h4>

@@ -1,0 +1,46 @@
+---
+import { HOME, WORK_EXPERIENCE } from "@consts";
+import Container from "@components/Container.astro";
+import Layout from "@layouts/Layout.astro";
+
+function formatDate(date: Date | null): string {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+  };
+  return date != null ? date.toLocaleDateString("en-US", options) : "Present";
+}
+---
+
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION} lang="en">
+  <Container>
+    <aside data-pagefind-ignore>
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h1 class="text-3xl font-semibold text-black dark:text-white">
+            Work Experience
+          </h1>
+        </div>
+      </section>
+      {
+        WORK_EXPERIENCE.map((work) => (
+          <article class="animate space-y-4 py-6">
+            <span class="text-xl font-semibold text-black dark:text-white">
+              <b>{work.role}</b> @ {work.company}
+            </span>
+            <div class="text-sm opacity-75">
+              From {formatDate(work.start)} to {formatDate(work.end)}
+            </div>
+            {work.description.split("\n").map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+            <div>
+              <b>Technologies:</b>
+              {work.technologies.join(", ")}
+            </div>
+          </article>
+        ))
+      }
+    </aside>
+  </Container>
+</Layout>

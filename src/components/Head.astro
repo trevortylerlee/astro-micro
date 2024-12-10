@@ -29,17 +29,17 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+const { title, description, image = "/og.webp" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link
+<linklink
   rel="icon"
-  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>"
-/>
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>"
+></linklink>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
@@ -184,8 +184,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
              -ms-transition: none !important;
              transition: none !important;
           }
-        `
-      )
+        `,
+      ),
     );
 
     document.head.appendChild(css);

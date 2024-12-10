@@ -23,7 +23,11 @@ const project = Astro.props;
 const { Content, headings } = await render(project);
 ---
 
-<Layout title={project.data.title} description={project.data.description}>
+<Layout
+  title={project.data.title}
+  description={project.data.description}
+  lang="en"
+>
   <Container>
     <div class="animate">
       <BackToPrevious href="/projects">Back to projects</BackToPrevious>
@@ -38,7 +42,7 @@ const { Content, headings } = await render(project);
           <div class="font-base text-sm">
             {readingTime(project.body)}
           </div>
-        )}     
+        )}
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {project.data.title}
