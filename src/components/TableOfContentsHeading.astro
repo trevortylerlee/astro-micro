@@ -8,7 +8,7 @@ const { heading } = Astro.props;
 ---
 
 <li class="list-inside list-disc px-6 py-1.5 text-sm">
-  <Link href={"#" + heading.id} underline>
+  <Link href={"#" + heading.slug} underline>
     {heading.text}
   </Link>
   {
