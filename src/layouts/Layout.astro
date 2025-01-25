@@ -2,7 +2,7 @@
 import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import PageFind from "@components/PageFind.astro";
+import Pagefind from "@components/Pagefind.astro";
 import { SITE } from "@consts";
 
 type Props = {
@@ -24,6 +24,6 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <PageFind />
+    <Pagefind />
   </body>
 </html>
