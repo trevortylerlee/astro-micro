@@ -17,7 +17,7 @@
     "@fontsource/geist-mono": "^5.2.5",
     "@fontsource/geist-sans": "^5.2.5",
     "@tailwindcss/vite": "^4.0.15",
-    "astro": "^5.5.3",
+    "astro": "^5.5.4",
     "astro-pagefind": "^1.8.3",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.0.2",
