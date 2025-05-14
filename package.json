@@ -16,12 +16,12 @@
     "@astrojs/sitemap": "^3.3.1",
     "@fontsource/geist-mono": "^5.2.6",
     "@fontsource/geist-sans": "^5.2.5",
-    "@tailwindcss/vite": "^4.1.5",
-    "astro": "^5.7.11",
+    "@tailwindcss/vite": "^4.1.6",
+    "astro": "^5.7.13",
     "astro-pagefind": "^1.8.3",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.5",
+    "tailwindcss": "^4.1.6",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
