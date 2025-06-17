@@ -19,6 +19,14 @@ const { title, description } = Astro.props;
     <Head title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>
   <body>
+    <noscript>
+      <style>
+        .animate{
+          opacity:1;
+          translate: var(--tw-translate-x) calc(var(--spacing) * 0);
+        }
+      </style>
+    </noscript>
     <Header />
     <main>
       <slot />
