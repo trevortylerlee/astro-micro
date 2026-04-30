@@ -48,13 +48,13 @@
   body {
     @apply font-sans antialiased;
     @apply flex flex-col;
-    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply bg-[#fffbf0] dark:bg-neutral-900;
     @apply text-black/75 dark:text-white/75;
   }
 
   header {
     @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-neutral-100/75 dark:bg-neutral-900/75;
+    @apply bg-[#fffbf0]/75 dark:bg-neutral-900/75;
     @apply saturate-200 backdrop-blur-xs;
   }
 
@@ -67,7 +67,7 @@
   }
 
   article {
-    @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+    @apply prose prose-stone max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
     @apply prose-headings:font-semibold;
     @apply prose-headings:text-black dark:prose-headings:text-white;
   }
@@ -80,8 +80,8 @@
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/50 dark:decoration-white/50;
+    @apply text-[#c17f4a] dark:text-white;
+    @apply decoration-[#c17f4a]/50 dark:decoration-white/50;
   }
 }
 
@@ -102,6 +102,86 @@ html.scrolled #back-to-top {
   @apply pointer-events-auto opacity-100;
 }
 
+/* ============================================
+   ☀️ SUNNY THEME - Warm sunlight effects
+   ============================================ */
+
+.sun-glow {
+  position: fixed;
+  top: -25%;
+  right: -5%;
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 210, 100, 0.22) 0%, rgba(255, 170, 60, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 998;
+  animation: sunBreathe 7s ease-in-out infinite;
+}
+
+@keyframes sunBreathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%       { transform: scale(1.1); opacity: 1; }
+}
+
+.light-shaft {
+  position: fixed;
+  pointer-events: none;
+  z-index: 997;
+  opacity: 0.28;
+}
+
+.shaft-1 {
+  top: -10%;
+  right: 8%;
+  width: 180px;
+  height: 120vh;
+  background: linear-gradient(180deg, rgba(255, 200, 80, 0.14) 0%, rgba(255, 200, 80, 0.03) 60%, transparent 100%);
+  transform: rotate(-7deg);
+  animation: shaftSway 9s ease-in-out infinite;
+}
+
+.shaft-2 {
+  top: -5%;
+  right: 18%;
+  width: 120px;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(255, 190, 60, 0.09) 0%, transparent 50%);
+  transform: rotate(-14deg);
+  animation: shaftSway 11s ease-in-out infinite 3s;
+}
+
+.shaft-3 {
+  top: 0%;
+  right: 28%;
+  width: 80px;
+  height: 90vh;
+  background: linear-gradient(180deg, rgba(255, 220, 100, 0.07) 0%, transparent 60%);
+  transform: rotate(-3deg);
+  animation: shaftSway 13s ease-in-out infinite 5s;
+}
+
+@keyframes shaftSway {
+  0%, 100% { transform: rotate(-7deg) translateX(0); }
+  50%       { transform: rotate(-4deg) translateX(18px); }
+}
+
+/* Noise texture overlay */
+.sunny-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ============================================
+   SHIKI CONFIG
+   ============================================ */
+
 /* shiki config */
 pre {
   @apply border border-black/15 py-5 dark:border-white/20;
@@ -109,7 +189,7 @@ pre {
 
 :root {
   --astro-code-foreground: #09090b;
-  --astro-code-background: #fafafa;
+  --astro-code-background: #faf8f5;
   --astro-code-token-comment: #a19595;
   --astro-code-token-keyword: #f47067;
   --astro-code-token-string: #00a99a;
@@ -122,6 +202,8 @@ pre {
 }
 
 .dark {
+  --astro-code-background: #1a1612;
+
   --astro-code-foreground: #fafafa;
   --astro-code-background: #09090b;
   --astro-code-token-comment: #a19595;
@@ -137,11 +219,11 @@ pre {
 
 /* copy code button on codeblocks */
 .copy-code {
-  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-[#e8e2da] bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
 }
 
 .copy-code:hover {
-  @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
+  @apply bg-[#f0e8d8] transition-colors dark:bg-[#232323];
 }
 
 .copy-code:active {
